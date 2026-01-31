@@ -1,0 +1,285 @@
+/* Reset padrão*/
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*body {
+    min-height: 100vh;
+}*/
+
+/*começar com estilos globais*/
+
+body{
+    font-family: Helvetica, sans-serif;
+    background-color:#f4f4f4;
+    color: #333;
+}
+
+header{
+    color:#f4f4f4;
+    background-color:#111;
+}
+
+/*estilos comuns de navbars*/
+
+.navbar{
+    display: flex;
+    height:120px;
+    align-items: center; /*centralizar vertical e horizontalmente*/
+    font-size: 25px;
+    justify-content:center;
+    /*padding: 1rem 5%;*/
+}
+.logo{
+    height:40px;
+    flex:1;
+}
+.icone{
+    height: 20px;
+}
+.navlinks{
+    list-style:none;
+    display: flex; /*block elements turn horizontal*/
+    flex: 2;
+    /*justify-content: center;
+    align-items: center;*/
+}
+.navlinks a{
+    text-decoration:none;
+    font-weight: bold;
+    color: #f4f4f4;
+    padding:40px 30px;
+}
+
+.navlinks a:hover{
+    border-bottom: 8px solid white;
+    background-color: steelblue;
+}
+.navbar::after{
+
+}
+
+#menu-toggle{
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* regras mobile */
+@media (max-width: 768px){
+    #planos {
+        flex-direction: column; /* muda o flexbox para vertical */
+        align-items: center;
+        gap: 20px;
+    }
+
+    #planos article {
+        width: 80%; /*20% no celular seria muito triste, ocupar + espaço*/
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 0;
+    }
+
+    #menu-toggle{
+        display: block;
+    }
+
+    #nav-list{
+        display: flex; /* manter flex, esconder com transform*/
+        /*colocando aqui as propriedades que só vão aparecer quando display não for 'none'*/
+        flex-direction: column; /*itens verticais*/
+        width: 100%;
+        background-color: #444;
+        /*position absolute permite usar a propriedade "top"*/
+        /*é melhor sempre evitar posições absolutas, 
+        mas nesse caso como é um menu fullscreen faz sentido*/
+        position: absolute;
+        top: 60px;
+        left: 0; /*no canto começando do início*/
+        padding: 20px;
+
+        /* Estado inicial: escondido e movido para cima */
+        opacity: 0;
+        transform: translateY(-20px); 
+        pointer-events: none; /* Impede clicar no menu enquanto invisível */
+        
+        /* A "mágica" da animação */
+        transition: all 0.4s ease-in-out;
+    }
+
+    /*classe que o js usa para habilitar o menu (display "none" muda para "flex")*/
+    #nav-list.active{
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+} /* max 768px*/
+
+@media (max-width: 480px){
+    #planos article{
+        width: 95%;
+    }
+
+    header{
+        padding: 10px;
+    }
+}/* max: 480px*/
+
+main{
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+/*teste de slider com css nativo(apagado)*/
+
+/*slider usando o swiper*/
+/* Estilizando o tamanho do slider */
+.swiper {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Cores de fundo apenas para distinguir os slides 
+.slide1 { background: #ff5f6d; }
+.slide2 { background: #2193b0; }
+.slide3 { background: #ee0979; }*/
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*.col-100 {
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        float: left;
+        position: relative;
+}
+button.slick-prev {
+        font-size: 0px;
+        border: none;
+        width: 25px;
+        height: 51px;
+        z-index: 9;
+        background-color: transparent;
+        position: absolute;
+        background-image: url(../img/anterior.png);
+        top: 35%;
+        left: 14%;
+}
+button.slick-next {
+    font-size: 0px;
+    border: none;
+    width: 25px;
+    height: 51px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+    background-image: url(../img/proximo.png);
+    top: 35%;
+    right: 14%;
+}
+.slick-list {
+    width: 100%!important;
+}
+.slick-initialized {
+    overflow: hidden;
+}
+.slick-dots li button {
+    font-size: 0px;
+    border: 5px solid #ffffff;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.slick-dots {
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 600px;
+}
+
+li.slick-active button {
+    background: #00bac6;
+}
+
+.slick-dots li {
+    padding-left: 10px;
+    display: inline-block;
+}
+/*fim das classes e css do slick slider*/
+
+#planos{
+    display: flex;
+    margin-top: 20px;
+    justify-content:center;
+    gap: 40px;
+}
+
+#planos .p-container{ /*flexitem*/
+    background-color:#f4f4f4;
+    border-radius: 8px;
+    border: 2px solid #909090;
+    padding: 20px;
+    text-align: center
+}
+
+.plano-img{
+   height: 400px;
+}
+.btn-plano{
+    background-color:rgb(32, 166, 228);
+    color:white;
+    font-weight:bold;
+    padding:10px;
+    font-size:25px;
+    margin-top: 20px;
+    border-style:none;
+    border-radius: 8px;
+}
+footer{
+    background-color:#333;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+    color: #f4f4f4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#botao{
+    background-color: #4040ff;
+    font-family: Arial;
+    color: #f4f4f4;
+    text-decoration: none;
+    padding:10px;
+    border-style:none;
+    border-radius: 8px;
+}
+
+#botao:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}

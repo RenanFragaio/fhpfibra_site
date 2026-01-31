@@ -1,0 +1,132 @@
+<html lang="pt-BR">
+<head>
+    <title> Pagina </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/pagina.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/slick.css" />-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo.png"/>
+            </div>
+        <!-- botao p/ menu sanduiche (não se usa mais jquery pra isso)-->    
+        <button id="menu-toggle" aria-label="abrir-menu" >☰</button>
+
+            <ul class="navlinks" id="nav-list">
+                <a href="#"><li>inicio</li></a>
+                <a href="#"><li>Quem Somos</li></a>
+                <a href="#"><li>Planos</li></a>
+                <a href="#"><li></li>Contato</li></a>
+
+                <a href="#"><li><img src="img/face.png" class="icone"/></li></a>
+                <a href="#"><li><img src="img/inst.png" class="icone"/></li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <!-- slider do slick-slider-->
+        <!--<div class="col-100">
+            <div class="slider-principal">
+                <img src="./img/banner1.jpg" />
+                <img src="./img/banner2.jpg" />
+                <img src="./img/banner1.jpg" />
+                <img  src="./img/banner2.jpg" />
+            </div>
+        </div>-->
+
+        <!-- teste do slider ccom CSS nativo -->
+        <!--<div class="slider">
+            <div class="slide"><img src="./img/banner1.jpg" alt="Slide 1"/></div>
+            <div class="slide"><img src="./img/banner2.jpg" alt="Slide 2"/></div>
+            <div class="slide"><img src="./img/banner1.jpg" alt="Slide 3"/></div>
+            <div class="slide"><img src="./img/banner2.jpg" alt="Slide 4"/></div>
+        </div>-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/banner1.jpg" /></div>
+                <div class="swiper-slide"><img src="./img/banner2.jpg" /></div>
+                <div class="swiper-slide"><img src="./img/banner1.jpg" /></div>
+                <div class="swiper-slide"><img src="./img/banner2.jpg" /></div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <section id="planos">
+            <article class="p-container">
+                
+                <img class="plano-img" src="img/600MB.jpg"/><br>
+                <button class="btn-plano"> Contrate </button>
+
+            </article>
+            <article class="p-container">
+                
+                <img class="plano-img" src="img/600MbM.png"/><br>
+                <button class="btn-plano"> Contrate </button>
+            </article>
+            <article class="p-container">
+                
+                <img class="plano-img" src="img/1GbM.png"/><br>
+                <button class="btn-plano"> Contrate </button>
+            </article>
+            
+            <!--<article id="plano1">
+                <p>100 mega</p>
+                <h3>...</h3>
+                <button id="botao1" onClick="mudar_cor()"> teste </button>
+            </article>
+            <article id="plano2">
+                <p>300 mega</p>
+                <h3>...</h3>
+                <button id="botao2"> teste </button>
+            </article>
+            <article id="plano3">
+                <p>600 mega</p>
+                <h3>...</h3>
+                <button id="botao3">teste </button>
+            </article>-->
+        </section>
+    </main>
+    <footer>
+        <p> copyright - Minha Pagina 2026</p>
+    </footer>
+
+    <!--<script src="meuSwiper.js"></script>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script src="js/meuSwiper.js"></script>
+    <!--<script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,               // Loop infinito
+      autoplay: {
+        delay: 3000,            // Passa sozinho a cada 3s
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,        // Pontinhos clicáveis
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>-->
+
+    <!--<script src="pagina.js"></script>-->
+    <!--<script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>-->
+</body>
+</html>
